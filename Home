@@ -10,4 +10,10 @@
 
     <h2> ผลงานของฉัน</h2>
     <ul>
-        <li><a href="#"
+        <li><a href="#"โปรเจกต์ที่ 1</a></li>
+        <li><a href="#"โปรเจกต์ที่ 2</a></li>
+    </ul>
+
+    <footer>ติดต่อ: Kanokvaree3486@gmail.com</footer>
+</body>
+</html>
