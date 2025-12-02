@@ -1,1 +1,208 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทักษะคู่</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* *** สไตล์ทั่วไปที่จำเป็นต้องมีเพื่อให้ส่วนนี้สวยงาม *** */
+        body { 
+            font-family: "Prompt", sans-serif; 
+            background: #f0f4f8; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; /* ใช้ flexbox จัดเรียง container หลัก */
+            flex-direction: column; 
+            align-items: center;
+        }
+        .section-group {
+            max-width: 900px; /* จำกัดความกว้างรวมของทั้งสองส่วน */
+            width: 100%;
+            margin: 20px 0;
+        }
+        .section { 
+            margin-bottom: 40px; 
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        /* ****************************************************** */
 
+        h2 { 
+            color: #1e3a8a; 
+            border-left: 8px solid #42a5f5; 
+            padding-left: 18px; 
+            font-weight: 700;
+            letter-spacing: 0.5px; 
+            margin-bottom: 30px; 
+        }
+        
+        /* .card ถูกลบออกเพื่อให้สไตล์อยู่บน .section โดยตรง */
+
+        .skill-list {
+            display: grid;
+            /* ยืนยัน 2 คอลัมน์ เมื่อหน้าจอกว้างพอ */
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+            gap: 30px; 
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-info {
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .skill-bar {
+            background: #e9ecef; 
+            border-radius: 10px;
+            height: 14px; 
+            margin-top: 10px; 
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15); 
+            overflow: hidden; 
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: #1e88e5; 
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(30, 136, 229, 0.4);
+            animation: fillProgress 1.5s ease-out forwards;
+        }
+        
+        @keyframes fillProgress {
+            from { width: 0; }
+            to { width: var(--skill-level); } 
+        }
+
+        .skill-icon {
+            margin-right: 10px;
+            color: #1e88e5; 
+            font-size: 1.2em; 
+        }
+        .skill-level {
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section-group">
+    <div class="section">
+        <h2><i class="fas fa-code"></i> ทักษะ (อภิสิทธิ์ อุ่นจิต)</h2>
+        
+        <ul class="skill-list">
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fab fa-html5"></i> HTML / CSS</span>
+                    <span class="skill-level">60%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 60%;"></div>
+                </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fab fa-js-square"></i> JavaScript</span>
+                    <span class="skill-level">75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 75%;"></div>
+                </div>
+            </li>
+            
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fas fa-paint-brush"></i> การออกแบบกราฟิก</span>
+                    <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 90%;"></div>
+                </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fas fa-video"></i> การตัดต่อวิดีโอ</span>
+                    <span class="skill-level">90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 90%;"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+    
+    <div class="section">
+        <h2><i class="fas fa-magic"></i> ทักษะ (กนกนารี หมุดเจริญ)</h2>
+        
+        <ul class="skill-list">
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fas fa-bullhorn"></i> HTML / CSS</span>
+                    <span class="skill-level">50%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 50%;"></div>
+                </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fas fa-share-alt"></i> JavaScript</span>
+                    <span class="skill-level">70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 70%;"></div>
+                </div>
+            </li>
+            
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fas fa-file-excel"></i> การออกแบบกราฟิก</span>
+                    <span class="skill-level">80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 80%;"></div>
+                </div>
+            </li>
+
+            <li class="skill-item">
+                <div class="skill-info">
+                    <span class="skill-name"><i class="skill-icon fas fa-globe-asia"></i> การตัดต่อวิดีโอ</span>
+                    <span class="skill-level">95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="--skill-level: 95%;"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
